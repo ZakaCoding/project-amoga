@@ -519,7 +519,7 @@ nav.footer-nav ul li:hover {
 .sidenav {
     margin: auto;
     height: 100%;
-    width: 450px;
+    width: 100px;
     position: fixed;
     z-index: 999;
     right: 0px;
@@ -1093,6 +1093,69 @@ and (-webkit-min-device-pixel-ratio: 2) {
     .item-store .image img {
         width: 300px;
     }
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+      .header-top img {
+          width: 600px;
+      }
+      .section-title {
+          font-size: 100pt;
+      }
+      section#main .section-title {
+          top: -100px !important;
+      }
+      .rectangle-left {
+          height: 300px !important;
+      }
+      .character-bg {
+          width: 600px !important;
+      }
+      p.description {
+          width: 600px;
+      }
+      .video-player {
+          width: 800px;
+      }
+      .video-player video {
+          margin-top: 0px;
+          width: 800px;
+      }
+      img.fly-left, img.fly-right {
+          width: 350px;
+          bottom: -10px;
+      }
+      .lg-screen {
+          width: 600px;
+      }
+      .lg-screen img {
+          width: 300px;
+          right: 0px;
+      }
+      .lg-screen .play-badge {
+          width: 200px;
+      }
+      .tp-el {
+          width: 500px !important;
+      }
+
+      section#apps {
+          height: 980px;
+      }
+      section#store {
+          height: 920px;
+      }
+      .item-store {
+          width: 300px;
+      }
+      .item-store .image img {
+          width: 400px;
+      }
+
 }
   
 
