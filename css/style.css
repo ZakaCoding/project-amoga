@@ -68,6 +68,15 @@ header {
     position:absolute;
     z-index: 1;
 }
+.fixed {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 999;
+}
+.fixed a {
+    text-decoration: none;
+}
 
 .header-top {
     width: 100%;
