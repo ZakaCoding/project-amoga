@@ -1114,6 +1114,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
       }
       .character-bg {
           width: 600px !important;
+          top: 100px !important; /* default 0px */
       }
       p.description {
           width: 600px;
