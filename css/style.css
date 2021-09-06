@@ -6,11 +6,14 @@
     height: 5px;
     margin-bottom: 50px;
 }
+.bg-transparent {
+    background-color: transparent !important;
+}
 
 /* font-face */
 @font-face {
     font-family: "built titling bold";
-    src: url('../.font/built-titling-bd.ttf');
+    src: url('https://zakacoding.github.io/amogasakti/.font/built-titling-bd.ttf');
 }
 @font-face {
     font-family: "built titling italic";
@@ -33,26 +36,47 @@ html, body {
     margin:0px;
     padding:0px;
     line-height: 1.6rem;
+    background-color: #000 !important;
 }
 
 header {
     width: 100%;
-    height: 83vh;
+    height: 100vh;
     display: block;
 
-    /* background-image: url('../images/header-bg.png');
-    background-size: cover; */
+    /* background-image: url('../images/video-thumbnail.png'); */
+    /* background-size: cover; */
+    position: relative;
+    overflow: hidden;
 
-    background-color: #000;
+    /* background-color: #000; */
 }
-header .header-top {
+.layer-3 {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    position:absolute;
+    z-index: 3;
+}
+.layer-2 {
+    width: 100%;
+    position:absolute;
+    z-index: 2;
+}
+.layer-1 {
+    width: 100%;
+    position:absolute;
+    z-index: 1;
+}
+
+.header-top {
     width: 100%;
     height: 70vh;
     position: relative;
 
     display: block;
 }
-header .header-top img.logo {
+.header-top img.logo {
     margin: auto;
     position: absolute;
     bottom: 0px;
@@ -60,7 +84,7 @@ header .header-top img.logo {
     
     transform:translateX(-50%);
 }
-header .header-bottom {
+.header-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,7 +98,6 @@ section#main {
     margin:auto;
     position: relative;
     background-color: #000;
-    /* overflow: hidden; */
 }
 section#main #why {
     max-width: 720px;
@@ -84,7 +107,7 @@ section#main #why {
     z-index: 2;
 }
 .section-title {
-    font-family: 'big noodle bold', sans-serif;
+    font-family: 'big noodle bold';
     font-size: 150pt;
     color: transparent;
 
@@ -92,11 +115,11 @@ section#main #why {
     -webkit-text-stroke: 2px rgba(43, 43, 43, 0.7);
 
     position: absolute;
-    top: 90px;
+    top: 0px;
     left: 200px;
 }
 h1.title {
-    font-family: 'built titling italic', sans-serif;
+    font-family: 'built titling italic';
     color: #FC8B00;
     font-size: 63px;
 }
@@ -121,7 +144,7 @@ section#main .rectangle-left {
 }
 section#main img.character-bg {
     position: absolute;
-    top: 0px; /* default 0px */
+    top: 100px; /* default 0px */
     right: 50px;
     z-index: 99;
 
@@ -149,7 +172,7 @@ section#trailer {
     overflow: hidden;
 }
 .wrapper {
-    max-width: 920px;
+    width: 100%;
     text-align: center;
     margin:auto;
     display: block;
@@ -176,8 +199,23 @@ img.fly-right {
     z-index: 9;
     /* width: 300px; */
 }
+.video-player {
+    max-width: 938px;
+    display: block;
+    position: relative;
+    margin:auto;
+}
 video {
     margin-top: 50px;
+    max-width: 938px;
+    position:inherit;
+    cursor: pointer;
+}
+.video-player .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 section#about {
@@ -206,7 +244,7 @@ section#about img.tp-el {
     width: 600px;
     display: block;
 }
-#amogasakti {
+.amogasakti {
     max-width: 720px;
     position: absolute;
     top:50%;
@@ -214,7 +252,10 @@ section#about img.tp-el {
     z-index: 2;
     display: block;
 }
-#amogasakti p.description {
+.sm-screen {
+    display: none;
+}
+.amogasakti p.description {
     width: inherit;
     margin-left: 15px;
     padding:0px;
@@ -238,7 +279,7 @@ section#card::after {
 }
 section#card {
     width: 100%;
-    height: 1800px;
+    height: 1900px; 
     background-image: url('../images/bg-komik.png');
     background-size: cover;
     background-attachment: fixed;
@@ -246,21 +287,49 @@ section#card {
 }
 .card {
     border-radius: 20px !important;
+    width: 300px;
 }
-section#card .float-title {
-    font-family: 'big noodle bold', sans-serif;
-    font-size: 150pt;
-    color: transparent;
-
-    /* text-stroke: 2px solid #fff; */
-    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.7);
-
+.text-left {
+    text-align: left !important;
+}
+/* .slider {
+    width: inherit;
+    text-align: center;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    width: 100%;
+    height: 550px;
+    position: relative;
+}
+.slide-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    z-index: 99;
-    top: 40%;
-    left: -300px;
-    transform: rotate(90deg);
+    top: 0px;
+    left: 0px;
 }
+.slide-item {
+    width: 400px;
+    height: 550px;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #fff;
+.slide-item img {
+    width: 550px;
+    position: absolute;
+    top: 0px;
+    left: -100px;
+    transition: ease-in-out .2s;
+}
+/* .slide-item:hover img {
+    width: 500px;
+    left: 0px;
+} */ 
 
 section#apps {
     position: relative;
@@ -270,3 +339,760 @@ section#apps {
     background-size: cover;
     background-repeat: no-repeat;
 }
+section#apps .aside{
+    display: flex;
+    justify-content: center;
+}
+.aside .side-left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.aside .side-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img.icon-app {
+    width: 50px !important;
+    margin-right: 20px;
+}
+.icon-title {
+    font-size: 14pt !important;
+    color: #fff !important;
+}
+.accordion-button::after {
+    background-image: url('../images/.icon/down-arrow.svg') !important;
+    margin-left: 50px;
+}
+.accordion-item {
+    border: none !important;
+}
+/* .animation-left {
+    animation-name: 'slideLeft';
+    transition: all .5s ease-in-out;
+}
+@keyframes slideLeft {
+    from  {
+        margin-left: 500px;
+    }
+    to {
+        margin-left: 0px;
+    }
+} */
+
+section#store {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/bg-store.png');
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 50px;
+}
+.item-store {
+    width: 400px;
+    margin: auto;
+    display: block;
+    overflow: hidden;
+}
+.item-store .image {
+    overflow: hidden;
+    position: relative;
+    height: 470px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+.reset {
+    width: 300px !important;
+    display: block;
+    margin: auto;
+}
+.item-store h3,p {
+    text-align: center;
+    color: #fff;
+}
+.link {
+    text-align: center;
+    width: 300px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.link p {
+    color: #fff;
+    margin: 10px;
+}
+
+section#testimoni {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/bg-store.png');
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 50px;
+}
+
+.testimoni {
+    margin: auto;
+    max-width: 500px;
+    display: block;
+    padding-top: 150px;
+}
+.testimoni .image-box {
+    background-color: #fff;
+    width: 150px;
+    height: 150px;
+    margin:auto;
+    transform: rotate(50deg);
+    overflow: hidden;
+    position: inherit;
+    display: flex;
+    align-items: center;
+    border: 3px solid #FC8B00;
+}
+.testimoni .image-box img {
+    transform: rotate(-50deg);
+    width: 250px;
+}
+.testimoni p.message {
+    margin-top: 100px;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+    text-align: center;
+    padding: 50px 0px;
+}
+.footer-logo {
+    margin: auto;
+    display: block;
+    width: 250px;
+}
+.social-media {
+    width: 350px;
+    margin: auto;
+    padding: 50px auto;
+}
+.social-media a {
+    text-decoration: none;
+}
+.social-media-icon {
+    color: #fff;
+    font-size: 26pt;
+    margin: 20px;
+}
+.social-media-icon:hover {
+    color: #7e7e7e;
+}
+nav.footer-nav {
+    margin: 50px auto;
+    width: 300px;
+}
+nav.footer-nav ul {
+    margin:0px;
+    padding: 0px;
+    overflow: hidden;
+}
+nav.footer-nav ul li {
+    float: left;
+    display: block;
+    margin: 0px 10px;
+    text-align: center;
+}
+nav.footer-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+nav.footer-nav ul li:hover {
+    border-bottom: 2px solid #fff;
+}
+
+/* side nav */
+.sidenav {
+    margin: auto;
+    height: 100%;
+    width: 450px;
+    position: fixed;
+    z-index: 999;
+    right: 0px;
+    transition: 0.5s;
+    opacity: 100%;
+    text-align: right;
+  }
+  
+  .sidenav a {
+    margin-right: 20px;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f00;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav div img{
+    position: relative;
+    display: inline-block;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav div .tooltip{
+    padding: 8px 8px 8px 8px;
+    right: 70px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+  }
+  
+  .sidenav div:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 1;
+  }
+  
+  
+  .sidenav div:hover #inside{
+    display: inline-block;
+    transition: all 0.5s ease;
+    opacity: 1;
+  }
+  
+  #inside{
+    display: none;
+    position: absolute;
+    margin-top: 13px;
+    right: 35px;
+    z-index: 4;
+  }
+
+  /* Responsive */
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+      .section-title {
+          font-size: 60pt;
+          left: 20px;
+      }
+      .sidenav {
+          display: none;
+          visibility: collapse;
+      }
+      header {
+          height: 211px !important;
+      }
+      .layer-1, .layer-2, .layer-3 {
+          height: 211px !important;
+      }
+      .header-top {
+          height: 200px;
+      }
+      .header-top img.logo {
+          top: 0px;
+          width: 200px !important;
+      }
+      .header-bottom {
+          display: none;
+      }
+      .character-bg {
+          display: none;
+          visibility: collapse;
+      }
+      .fly-right {
+        display: none;
+    }
+    img.fly-left {
+        width: 300px;;
+    }
+    .sm-screen, .lg-screen {
+        display: none;
+        visibility: hidden;
+    }
+    .tp-el {
+        width: 300px !important;
+    }
+    /* section#card {
+        display: none;
+    } */
+    /* section#apps {
+        display: none;
+    } 
+    section#store {
+        display: none;
+    } */
+    .rectangle-left {
+        height: 400px !important;
+    }
+    section#trailer::after {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        backdrop-filter: none;
+    }
+    .video-player {
+        width: 300px;
+    }
+    .video-player video {
+        width: 300px;
+    }
+    .video-player .play-btn {
+        top:45%;
+        transform: translateX(-45%);
+    }
+    section#card {
+        height: 3500px !important;
+    }
+    .card-sm-screen {
+        width: 300px !important;
+    }
+    .card {
+        width: 200px !important;
+        margin: 10px auto;
+    }
+
+    section#about img.tp-el {
+        position: relative !important;
+        top: 350px;
+        left: 0px;
+        width: 500px;
+        margin: auto;
+        display: block;
+    }
+    section#about .section-title {
+        display: none;
+    }
+    section#about .lg-screen {
+        display: none;
+    }
+    section#about .sm-screen {
+        display: block;
+        position: relative;
+        margin: 50px auto;
+        width: 100%;
+        height: 500px;
+    }
+    .tp-el {
+        top: 200px !important;
+    }
+    section#about {
+        height: 1024px !important;
+        position: relative;
+    }
+    section#about .sm-screen {
+        width: 300px !important;
+        display: block;
+        visibility: visible;
+        position: absolute;
+        bottom: 0px;
+        height: 300px;
+    }
+    .lg-screen {
+        display: none;
+    }
+    section#about .sm-screen img.title {
+        width: 300px !important;
+        margin: auto;
+    }
+    section#about .rectangle-left {
+        display: none;
+
+    }
+    section#apps {
+        height: 1800px;
+    }
+    .aside {
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        flex-direction: column;
+    }
+    .side-left img {
+        width: 300px;
+    }
+
+    .card-sm-screen {
+        width: 300px !important;
+    }
+    section#store {
+        height: 1900px !important;
+    }
+    .item-store {
+        width: 300px;
+    }
+    .item-store .image img {
+        width: 300px;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px)
+  and (orientation: portrait) { 
+    header {
+        height: 234px !important;
+    }
+    .layer-1, .layer-2, .layer-3 {
+        height: 234px !important;
+    }
+    .header-top {
+        height: 200px;
+    }
+    .header-top img.logo {
+        top: 0px;
+        width: 200px !important;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .sidenav {
+        display: none;
+        visibility: hidden;
+    }
+    header {
+        height: 432px !important;
+    }
+    .layer-3, .layer-2, .layer-1 {
+        height: 432px !important;
+    }
+    .layer-3 .header-top {
+        height: 300px;
+    }
+    .header-top img.logo {
+        width: 400px !important;
+        /* top: 0px; */
+    }
+    #why p.description {
+        width: 500px;
+    }
+    section#main {
+        height: 750px !important;
+    }
+    .section-title {
+        font-size: 80pt;
+        left: 50px;
+    }
+    #why p.description {
+        width: 350px;
+    }
+    section#main img.character-bg {
+        width: 420px;
+        top: 200px !important;
+        right: 0px !important;
+        overflow: hidden;
+    }
+    section#main .rectangle-left {
+        height: 450px;
+    }
+    img.fly-left, .fly-right {
+        width: 400px;
+    }
+    video {
+        width: 600px;
+        margin: auto;
+    }
+    section#about {
+        height: 1024px !important;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    section#about img.tp-el {
+        position: relative !important;
+        top: 350px;
+        left: 0px;
+        width: 500px;
+        margin: auto;
+        display: block;
+    }
+    section#about .section-title {
+        display: none;
+    }
+    section#about .lg-screen {
+        display: none;
+    }
+    section#about .sm-screen {
+        display: block;
+        position: relative;
+        margin: 50px auto;
+        width: 100%;
+        height: 500px;
+    }
+    section#about .sm-screen img.title {
+        width: 300px !important;
+    }
+    section#about .rectangle-left {
+        display: none;
+
+    }    
+
+    .card-sm-screen {
+        width: 500px !important;
+    }
+    section#store {
+        height: 1400px !important;
+    }
+    .item-store {
+        width: 300px;
+    }
+    .item-store .image img {
+        width: 300px;
+    }
+    section#testimoni {
+        height: 690px !important;
+    }
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    header {
+        height: 576px !important;
+    }
+    .layer-3, .layer-2, .layer-1 {
+        height: 576px !important;
+    }
+    .layer-3 .header-top {
+        height: 400px;
+    }
+    .header-top img.logo {
+        width: 500px !important;
+        /* top: 0px; */
+    }
+    #why p.description {
+        width: 500px;
+    }
+    section#main {
+        height: 750px !important;
+    }
+    .section-title {
+        font-size: 100pt;
+        left: 100px;
+    }
+    section#main img.character-bg {
+        width: 500px;
+        top: 250px !important;
+        right: 0px !important;
+        overflow: hidden;
+    }
+
+    section#trailer {
+        height: 800px !important;
+    }
+    img.fly-left, .fly-right {
+        display: none;
+    }
+
+    section#about {
+        height: 800px;
+    }
+    img.tp-el {
+        width: 400px !important;
+        right: 50px !important;
+    }
+    .amogasakti p.description {
+        width: 500px;
+    }
+    img.title {
+        width: 400px !important;
+    }
+    section#testimoni {
+        height: 750px !important;
+    }
+    section#apps {
+        height: 800px !important;
+    }
+    .side-left img {
+        width: 300px !important;
+    }
+    section#store {
+        height: 1450px !important;
+    }
+}
+
+  /* ----------- iPad Pro 12.9" ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1366px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait) 
+and (-webkit-min-device-pixel-ratio: 2) {
+    header {
+        height: 576px !important;
+    }
+    .layer-3, .layer-2, .layer-1 {
+        height: 576px !important;
+    }
+    .layer-3 .header-top {
+        height: 400px;
+    }
+    .header-top img.logo {
+        width: 500px !important;
+        /* top: 0px; */
+    }
+    section#main {
+        height: 750px !important;
+    }
+    .section-title {
+        font-size: 100pt;
+        left: 100px;
+    }
+    section#main img.character-bg {
+        width: 500px;
+        right: 0px !important;
+        overflow: hidden;
+    }
+
+    section#trailer {
+        height: 800px !important;
+    }
+    img.fly-left, .fly-right {
+        display: none;
+    }
+
+    section#about {
+        height: 800px;
+    }
+    img.tp-el {
+        width: 400px !important;
+        right: 50px !important;
+    }
+    .amogasakti p.description {
+        width: 500px;
+    }
+    img.title {
+        width: 400px !important;
+    }
+    section#testimoni {
+        height: 750px !important;
+    }
+    
+}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+and (min-device-width: 1366px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 2) {
+    header {
+        height: 768px !important;
+    }
+    .layer-3 {
+        height: 768px !important;
+    }
+    .layer-3 .header-top {
+        height: 500px;
+    }
+    section#main img.character-bg {
+        right: 0px !important;
+        overflow: hidden;
+    }
+    p.description {
+        width: 500px;
+    }
+
+    img.fly-left, .fly-right {
+        width: 400px;
+    }
+    .amogasakti p.description {
+        width: 600px;
+    }
+    img.tp-el {
+        right: 10px !important;
+    }
+    .item-store {
+        width: 300px;
+    }
+    .item-store .image img {
+        width: 300px;
+    }
+}
+  
+

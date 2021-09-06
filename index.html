@@ -7,32 +7,89 @@
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="vendor/node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css">
+    <link rel="stylesheet" href="vendor/node_modules/@fortawesome/fontawesome-free/css/brands.min.css">
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
     <title>Amogasakti</title>
 </head>
 <body>
-    <!-- header -->
-    <header>
-        <div class="container">
-            <div class="header-top">
-                <!-- logo -->
-                <img src="images/Amogasakti.png" class="logo" alt="Amogasakti">
+
+    <!-- sidenav -->
+    <div id="mySidenav" class="sidenav d-flex flex-column justify-content-center">
+        <div class="d-flex flex-row-reverse">
+            <a href="#header">
+                <img src="images/.icon/sidenav.png" class="justify-content-center align-items-center">
+                <img src="images/.icon/sidenav-hover.png" id="inside">
+            </a>
+            <div class="tooltip">Beranda</div>
+        </div>
+        <div class="d-flex flex-row-reverse">
+            <a href="#main">
+                <img src="images/.icon/sidenav.png" class="justify-content-center align-items-center">
+                <img src="images/.icon/sidenav-hover.png" id="inside">
+            </a>
+            <div class="tooltip">Why We Start</div>
+        </div>
+        <div class="d-flex flex-row-reverse">
+            <a href="#trailer">
+                <img src="images/.icon/sidenav.png" class="justify-content-center align-items-center">
+                <img src="images/.icon/sidenav-hover.png" id="inside">
+            </a>
+            <div class="tooltip">Trailer</div>
             </div>
-            <div class="header-bottom">
-                <a href="" class="btn btn-outline-light btn-lg">Mainkan Sekarang</a>
+        <div class="d-flex flex-row-reverse">
+            <a href="#apps">
+                <img src="images/.icon/sidenav.png" class="justify-content-center align-items-center">
+                <img src="images/.icon/sidenav-hover.png" id="inside">
+            </a>
+            <div class="tooltip">Amogasakti</div>
+        </div>
+        <div class="d-flex flex-row-reverse">
+            <a href="#store">
+                <img src="images/.icon/sidenav.png" class="justify-content-center align-items-center">
+                <img src="images/.icon/sidenav-hover.png" id="inside">
+            </a>
+            <div class="tooltip">Produk</div>
+        </div>
+        <div class="d-flex flex-row-reverse">
+            <a href="#testimoni">
+                <img src="images/.icon/sidenav.png" class="justify-content-center align-items-center">
+                <img src="images/.icon/sidenav-hover.png" id="inside">
+            </a>
+            <div class="tooltip">Testimoni</div>
+        </div>
+    </div>
+    <!-- header -->
+    <header id="header">
+        <img src="images/header-bg-effect.png" class="layer-1 float" data-rellax-speed="-7" alt="">
+        <img src="images/header-bg-fixed.png" class="layer-2" alt="">
+        <div class="layer-3">
+            <div class="container float" data-rellax-speed="7">
+                <div class="header-top">
+                    <!-- logo -->
+                    <img src="images/Amogasakti.png" class="logo" alt="Amogasakti">
+                </div>
+                <div class="header-bottom">
+                    <a href="" class="btn btn-outline-light btn-lg">Mainkan Sekarang</a>
+                </div>
             </div>
         </div>
     </header>
     <!-- main -->
     <section id="main">
-        <div class="section-title">WHY WE START</div>
+        <div class="section-title float" data-rellax-speed="-2">WHY WE START</div>
         <div class="rectangle-left"></div>
-        <img src="images/character-arjuna.png" alt="Arjuna" class="character-bg">
+        <img src="images/character-arjuna.png" alt="Arjuna" class="character-bg float" data-rellax-speed="4">
         
         <div class="container">
             <div id="why">
-                <h1 class="title">WHY WE START</h1>
+                <h1 class="title" data-aos="fade-up" data-aos-anchor-placement="top-center">WHY WE START</h1>
                 <p class="description">
                     Wayang adalah warisan budaya sarat nilai-nilai adiluhung yang dapat berperan
                     meningkatan karakter bangsa lewat kisah dan tokoh di dalamnya.
@@ -51,12 +108,16 @@
     <section id="trailer">
         <div class="wrapper">
             <h1 class="title">TRAILER</h1>
-            <video poster="images/video-thumbnail.png">
-                <source src="#">
-            </video>
+            <div class="video-player">
+                <video poster="images/video-thumbnail.png" x-webkit-airplay="allow" data-youtube-id="eApH9Gp9wMc" src="https://www.youtube.com/watch?v=eApH9Gp9wMchttps://www.youtube.com/embed/eApH9Gp9wMc" class="video">
+                    <!-- <source src="asset/video/Amogasakti.mp4"> -->
+                    <!-- video controls -->
+                </video>
+                <img src="images/.icon/play-btn.png" class="play-btn" alt="">
+            </div>
         </div>
-        <img src="images/duryudana.png" alt="" class="fly-left">
-        <img src="images/yudistira.png" alt="" class="fly-right">
+        <img src="images/duryudana.png" alt="" class="fly-left" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="250" data-aos-duration="500">
+        <img src="images/yudistira.png" alt="" class="fly-right" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="250" data-aos-duration="500">
     </section>
     <section id="about">
         <div class="section-title">AMOGASAKTI</div>
@@ -64,79 +125,85 @@
         <img src="images/tp.png" class="tp-el">
 
         <div class="container">
-            <div id="amogasakti">
-                <img src="images/amogasakti-icon.png" alt="" class="title">
-                <p class="description">
+            <div class="amogasakti lg-screen">
+                <img src="images/amogasakti-icon.png" alt="" class="title" data-aos="fade-up">
+                <p class="description" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     AMOGASAKTI adalah Trading Card Game based on karakter original Wayang Gagrak Malang dengan detail watak, background story, dan artefak pusaka karakter dalam kisah Mahabarata yang dilengkapi dengan fitur aplikasi koleksi kartu berbasis Augmented Reality, komik, dan HP counter. 
                 </p>
-                <a href='https://play.google.com/store/apps/details?id=com.Amogasaski.Amogasakti&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Temukan di Google Play' src='https://play.google.com/intl/id/badges/static/images/badges/id_badge_web_generic.png' class="play-badge"/></a>
+                <a href='https://play.google.com/store/apps/details?id=com.Amogasaski.Amogasakti&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Temukan di Google Play' src='https://play.google.com/intl/id/badges/static/images/badges/id_badge_web_generic.png' class="play-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom"/></a>
+            </div>
+            <div class="amogasakti sm-screen">
+                <img src="images/amogasakti-icon.png" alt="" class="title" data-aos="fade-up">
+                <p class="description" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                    AMOGASAKTI adalah Trading Card Game based on karakter original Wayang Gagrak Malang dengan detail watak, background story, dan artefak pusaka karakter dalam kisah Mahabarata yang dilengkapi dengan fitur aplikasi koleksi kartu berbasis Augmented Reality, komik, dan HP counter. 
+                </p>
+                <a href='https://play.google.com/store/apps/details?id=com.Amogasaski.Amogasakti&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Temukan di Google Play' src='https://play.google.com/intl/id/badges/static/images/badges/id_badge_web_generic.png' class="play-badge" data-aos="fade-up" data-aos-anchor-placement="top-bottom"/></a>
             </div>
         </div>
     </section>
     <section id="card">
-        <div class="float-title">AMOGASAKTI CARD</div>
         <div class="wrapper">
             <div class="container">
-                <h1 class="title text-left">Kartu Ksatria</h1>
-                <p class="description">
+                <h1 class="title text-left" data-aos="fade-up">Kartu Ksatria</h1>
+                <p class="description" data-aos="fade-up">
                     Kartu Karakter adalah Kartu utama yang menampilkan tokoh-tokoh wayang yang ada di universe pewayangan Jawa.
                 </p>
-                <div class="row">
-                    <div class="col">
+                <div class="row card-sm-screen" data-aos="fade-up">
+                    <div class="col-sm-4"> 
                         <div class="card text-white">
                             <img src="images/.card/Arjuna-card.png" alt="" class="card-img">
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-4">
                         <div class="card text-white">
                             <img src="images/.card/Bisma-card.png" alt="" class="card-img">
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-4">
                         <div class="card text-white">
                             <img src="images/.card/Karna-card.png" alt="" class="card-img">
                         </div>
                     </div>
                 </div>
                 <div class="spacer"></div>
-                <h1 class="title text-left">Kartu Ageman</h1>
-                <p class="description">
+                <h1 class="title text-left" data-aos="fade-up">Kartu Ageman</h1>
+                <p class="description" data-aos="fade-up">
                     Kartu Ageman Amogasakti adalah kartu senjata tokoh-tokoh pewayangan Amogasakti. Efek Kartu Ageman akan maksima lapabila digunakan oleh pemilik aslinya.
                 </p>
-                <div class="row">
-                    <div class="col">
+                <div class="row card-sm-screen" data-aos="fade-up">
+                    <div class="col-sm-4">
                         <div class="card text-white">
                             <img src="images/.card/ageman-arjuna.png" alt="" class="card-img">
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-4">
                         <div class="card text-white">
                             <img src="images/.card/ageman-bisma.png" alt="" class="card-img">
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-4">
                         <div class="card text-white">
                             <img src="images/.card/ageman-karna.png" alt="" class="card-img">
                         </div>
                     </div>
                 </div>
                 <div class="spacer"></div>
-                <h1 class="title text-left">Kartu Pusaka</h1>
-                <p class="description">
+                <h1 class="title text-left" data-aos="fade-up">Kartu Pusaka</h1>
+                <p class="description" data-aos="fade-up">
                     Kartu Pusaka adalah kartu yang akan membantu pemain dalam permainan dengan kekuatan khusus 
                 </p>
-                <div class="row">
-                    <div class="col">
+                <div class="row card-sm-screen" data-aos="fade-up">
+                    <div class="col-sm-4">
                         <div class="card text-white">
                             <img src="images/.card/pusaka-arjuna.png" alt="" class="card-img">
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-4">
                         <div class="card text-white">
                             <img src="images/.card/pusaka-bisma.png" alt="" class="card-img">
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-4">
                         <div class="card text-white">
                             <img src="images/.card/pusaka-karna.png" alt="" class="card-img">
                         </div>
@@ -150,20 +217,195 @@
             <div class="spacer"></div>
             <h1 class="title text-center">Amogasakti App</h1>
             <div class="spacer"></div>
+            <div class="container">
+                <div class="aside">
+                    <div class="side-left">
+                        <img src="images/phone-tp.png" alt="" class="phone-app">
+                    </div>
+                    <div class="side-right text-white">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item bg-transparent">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button bg-transparent icon-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <img src="images/.icon/icon-comic.svg" alt="" class="icon-app">
+                                        Komik
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body animation-left">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button bg-transparent collapsed icon-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <img src="images/.icon/icon-ar.svg" alt="" class="icon-app">
+                                        Augmented Reality
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button bg-transparent collapsed icon-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <img src="images/.icon/icon-card.svg" alt="" class="icon-app">
+                                        Koleksi
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item bg-transparent">
+                                <h2 class="accordion-header" id="headingFour">
+                                  <button class="accordion-button bg-transparent collapsed icon-title" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                      <img src="images/.icon/icon-hp.svg" alt="" class="icon-app">
+                                      HP COUNTER
+                                  </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="store">
+        <div class="container">
+            <h1 class="title text-center">Beli Sekarang</h1>
             <div class="row">
                 <div class="col">
-                    <img src="images/phone-tp.png" alt="Amogasakti Phone">
+                    <div class="item-store">
+                        <div class="image">
+                            <img src="images/box-2.png" alt="">
+                        </div>
+                        <h3 class="item-title">Amogasakti Starter Pack</h3>
+                        <p>Rp. 50.000</p>
+                    </div>
                 </div>
-                <div class="col"></div>
+                <div class="col">
+                    <div class="item-store">
+                        <div class="image">
+                            <img src="images/box-mockup.png" alt="" class="reset">
+                        </div>
+                        <h3 class="item-title">Amogasakti Battle Pack</h3>
+                        <p>Comming Soon</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="item-store">
+                        <div class="image">
+                            <img src="images/booster-pack.png" alt="" class="reset">
+                        </div>
+                        <h3 class="item-title">Amogasakti Booster Pack</h3>
+                        <p>Comming Soon</p>
+                    </div>
+                </div>
+            </div>
+            <div class="link">
+                <p>Tersedia di</p>
+                <a href="https://www.tokopedia.com/amogasakti" class="btn btn-outline-success btn-lg">
+                    <img src="images/.icon/tokopedia.png" alt=""> Tokopedia
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="testimoni">
+        <div class="container">
+            <h1 class="title text-center">Testimoni</h1>
+
+            <div class="testimoni">
+                <div class="image-box">
+                    <img src="images/user-1.jpg" alt="">
+                </div>
+                <p class="message">"Sebuah permainan yang menjanjikan dan saya yakin nantinya banyak orang indonesia yang ingin memainkan game ini."</p>
+                <p class="author">-Dennis Adishwara-</p>
             </div>
         </div>
     </section>
     <!-- footer -->
     <footer>
-
+        <div class="container">
+            <img src="images/amogasakti-icon.png" alt="" class="footer-logo">
+            <p>&copy; Amogasakti 2021</p>
+            <div class="social-media">
+                <a href="">
+                    <i id="twitter" class="fab fa-twitter social-media-icon"></i>
+                </a>
+                <a href="https://www.instagram.com/amogasakti.id/">
+                    <i id="instagram" class="fab fa-instagram social-media-icon"></i>
+                </a>
+                <a href="">
+                    <i id="Facebook" class="fab fa-facebook social-media-icon"></i>
+                </a>
+                <a href="https://wa.link/4d3odk">
+                    <i id="Whatsapp" class="fab fa-whatsapp social-media-icon"></i>
+                </a>
+                
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#terms">Terms & Condition</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- 
+            FRONT END WEB DEVELOPER
+            zakacoding.github.io
+         -->
     </footer>
     <!-- javascript end of body -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    <script>
+        var video = document.querySelector('.video');
+
+        video.addEventListener("click",function() {
+            document.querySelector('.play-btn').style = "display: none";
+            if(video.paused) {
+                video.play();
+            } else {
+                document.querySelector('.play-btn').style = "display: block";
+                video.pause();
+            }
+        });
+
+        video.addEventListener('ended', function() {
+            video.load();
+        });
+    </script>
+
+    <!-- Parallax Effect -->
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script>
+        var parallax = new Rellax('.float');
+    </script>
+
+    <!-- AOS javascript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>  
 </body>
 </html>
